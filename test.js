@@ -3,6 +3,30 @@
 
     $(() => {
         // vérifier si la session est connectée
+        $.ajax({
+           url:'json/isconnected.php',
+           method:'get'
+
+        }).done(function (data) {
+           if (data===true){
+               // faire d'autres appels ajax pour afficher ce qu'on veut
+               $('body').append(
+                   $('<button />')
+                       .html('Déconnexion')
+                       .click(function () {
+                           $.ajax({
+                               url: 'json/logout.php',
+                               method : 'get'
+                           }).done(function () {
+                               window.location.href='/login.html';
+
+                           })
+                       })
+               )
+           } else {
+               window.location.href = '/login.html';
+           }
+        });
        $('#login-form').submit(function(){
            $('#message').fadeOut();
            $.ajax({
