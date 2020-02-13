@@ -2,9 +2,11 @@
     'use strict';
 
     $(() => {
+        // vérifier si la session est connectée
        $('#login-form').submit(function(){
+           $('#message').fadeOut();
            $.ajax({
-               url : $(this).attr('action'), //on peut aussi écrire 'json/login-php
+               url : $(this).attr('action'), //on peut aussi écrire 'json/login-php'
                method : $(this).attr('method'),
                data: $(this).serialize(),
 
@@ -13,6 +15,9 @@
                {
                    window.location.href = '/';
                } else{
+                   $('#message')
+                       .html(data.message)
+                       .fadeIn();
 
                }
 
