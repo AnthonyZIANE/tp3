@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page de connexion</title>
+    <title>Page d'inscription</title>
     <link rel="stylesheet" href="style1.css">
     <link rel="icon" type="image/png" href="IMG/web.jpg" />
     <script src="jquery-3.4.1.min.js"></script>
@@ -11,16 +11,15 @@
 <body>
 <div class="login-page">
     <div class="form">
-        <form class="login-form" action="projet.html" method="post">
+        <form class="login-form"  action="json/login.php" method="post">
             <input type="text" placeholder="Identifiant"/>
             <input type="password" placeholder="Mot de passe"/>
-            <button>Se connecter</button>
-            <p class="message">Pas encore inscrit ? Par ici => <a href="inscription.html">Inscrivez-vous !</a></p>
+            <input type="text" placeholder="Adresse électronique"/>
+            <button>Création du compte !</button>
+            <p class="message">Maintenant, connecte toi ➡ <a href="index.html">Se connecter !</a></p>
         </form>
     </div>
 </div>
 <div id="message"></div>
 </body>
 </html>
-
-<!--action="json/login.php"-->
