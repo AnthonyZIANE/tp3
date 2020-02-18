@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page d'inscription</title>
+    <title>Page de connexion</title>
     <link rel="stylesheet" href="style1.css">
     <link rel="icon" type="image/png" href="IMG/web.jpg" />
     <script src="jquery-3.4.1.min.js"></script>
-    <script src="test.js"></script>
+    <script src="login.js"></script>
 </head>
 <body>
 <div class="login-page">
     <div class="form">
-        <form class="login-form"  action="json/login.php" method="post">
+        <form class="form-login" action="json/login.php" method="post">
             <input type="text" placeholder="Identifiant"/>
             <input type="password" placeholder="Mot de passe"/>
-            <input type="text" placeholder="Adresse électronique"/>
-            <button>Création du compte !</button>
-            <p class="message">Maintenant, connecte toi ➡ <a href="login.html">Se connecter !</a></p>
+            <button>Se connecter</button>
+            <p class="message">Pas encore inscrit ? Par ici => <a href="inscription.html">Inscrivez-vous !</a></p>
         </form>
     </div>
 </div>
 <div id="message"></div>
 </body>
 </html>
+
+<!--action="json/login.php"-->
