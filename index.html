@@ -1,16 +1,24 @@
-<!doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Le projet</title>
-    <link rel="stylesheet" href="style1.css">
-    <link rel="icon" type="image/png" href="IMG/web.jpg" />
+    <meta charset="UTF-8">
+    <title>Page de connexion</title>
+    <link rel="stylesheet" href="IMG/style1.css">
+    <link rel="icon" type="image/png" href="IMG/partage.png"/>
     <script src="jquery-3.4.1.min.js"></script>
-    <script src="test.js"></script>
     <script src="login.js"></script>
 </head>
 <body>
-<div class="deco">
+<div class="login-page">
+    <div class="form">
+        <form class="form-login" action="json/login.php" method="post">
+            <input type="text" name="username" placeholder="Identifiant"/>
+            <input type="password" name="password" placeholder="Mot de passe"/>
+            <button>Se connecter</button>
+        </form>
+    </div>
+</div>
+<div id="message">
 </div>
 </body>
 </html>

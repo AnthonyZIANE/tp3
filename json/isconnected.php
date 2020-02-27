@@ -2,6 +2,9 @@
 
 session_start();
 
+$obj = new stdClass();
+$obj ->message2 = "Bienvenue !";
+
 $isconnected = isset($_SESSION['user']);
 
 header('Cache-Control: no-cache, must-revalidate');

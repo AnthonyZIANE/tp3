@@ -10,9 +10,9 @@
                 data : $(this).serialize()
             }).done(function (data) {
                 if(data.success === true) {
-                    window.location.href = 'index.html';
-                } else { // data.success === false
-                    $('#message').html(data.message).fadeIn().css("color","red");
+                    window.location.href = 'projet.html';
+                } else if (data.success === false) { // data.success === false
+                    $('#message').html(data.message).fadeIn().css("color","#FF0000");
                 }
             }).fail(function () {
                 $('body').html('Une erreur critique est arrivée.');
