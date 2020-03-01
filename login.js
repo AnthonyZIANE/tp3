@@ -10,7 +10,7 @@
                 data : $(this).serialize()
             }).done(function (data) {
                 if(data.success === true) {
-                    window.location.href = 'projet.html';
+                    window.location.href = 'projet.php';
                 } else if (data.success === false) { // data.success === false
                     $('#message').html(data.message).fadeIn().css("color","#FF0000");
                 }

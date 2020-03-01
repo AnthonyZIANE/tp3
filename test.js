@@ -11,7 +11,11 @@
             if (data===true){
                 // faire d'autres appels ajax pour afficher ce qu'on veut
                 $('#message2').html(data.message).fadeIn().css("color","#F08226");
-                $('.deco').append(
+                $('.deco').hover(function() {
+                    $(this).fadeOut(500);
+                    $(this).fadeIn(500).stop();
+                })
+                    .append(
                     $('<button />')
                         .html('Déconnexion')
                         .click(function () {
@@ -19,7 +23,7 @@
                                 url: 'json/logout.php',
                                 method : 'get'
                             }).done(function () {
-                                window.location.href='/projet.html';
+                                window.location.href='/projet.php';
 
                             })
                         })
@@ -28,7 +32,24 @@
                 window.location.href = '/index.html';
             }
         });
+
     });
+
+
+
+}) ();
+
+
+(function () {
+    'use strict';
+     $(() => {
+         $.ajax({
+             url :'json/transfert.php',
+             method: 'get'
+
+         }).done()
+     });
+
 
 }) ();
 $('.message a').click(function(){
