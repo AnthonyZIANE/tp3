@@ -4,8 +4,8 @@ require_once '../connexion.php';
 $obj = new stdClass();
 $obj->message = "Aucun fichier";
 $obj->success = false;
-
-
+define('WWW_ROOT',dirname(dirname(__FILE__)));
+define('CONSTI',WWW_ROOT);
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
 
 if (isset($_FILES['image_file']))
@@ -22,7 +22,7 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
-        $path = '/uploads/'; // upload directory
+        $path = realpath('..') . '/uploads/'; // upload directory
         @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
