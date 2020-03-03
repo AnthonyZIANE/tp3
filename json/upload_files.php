@@ -36,8 +36,6 @@ if (isset($_FILES['image_file']))
 //        @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
-            var_dump($final_image);
-            die();
             $final_filename = $path . strtolower($final_image);
         } while (file_exists($final_filename));
 
@@ -49,7 +47,7 @@ if (isset($_FILES['image_file']))
             $email = 'test@test.cc';
             if ($db->query(
                 "INSERT uploading (name, email, file_name) ".
-                "VALUES ('".$name."','".$email."','".$final_filename."')"
+                "VALUES ('".$name."','".$email."','".$final_image."')"
             )) {
                 $obj->message = "Réception ok";
                 $obj->success = true;
