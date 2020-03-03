@@ -20,7 +20,6 @@
 </div>
 <div class="deco">
 </div>
-<p><a href="liste.php">Liste</a></p>
 <div id="centre">
     <form class="form2" action="json/upload_files.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />

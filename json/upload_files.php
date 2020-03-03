@@ -19,7 +19,7 @@ if(!empty($_POST['name']) || !empty($_POST['email']) || $_FILES['image'])
             $name = $_POST['name'];
             $email = $_POST['email'];
             //include database configuration file
-            include_once 'db.php';
+            include_once 'connexion.php';
             //insert form data in the database
             $insert = $db->query("INSERT uploading (name,email,file_name) VALUES ('".$name."','".$email."','".$path."')");
             //echo $insert?'ok':'err';
@@ -30,4 +30,5 @@ if(!empty($_POST['name']) || !empty($_POST['email']) || $_FILES['image'])
         echo 'invalid';
     }
 }
+
 ?>
