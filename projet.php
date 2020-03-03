@@ -15,7 +15,7 @@ define('CONSTI',WWW_ROOT);
     <script src="script.js"></script>
 </head>
 <body>
-<div class="cst"><a href='<?= CONSTI ?>'></div>
+<div class="cst"><a href='<?= CONSTI ?>'>test</div>
 <div id="haut">
     <img class="photo1" src="/img/photo.png" alt="photo"/>
     <p class="share">Share your Photos !</p>
