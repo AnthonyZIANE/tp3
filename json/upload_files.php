@@ -7,8 +7,6 @@ $obj->success = false;
 
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
-$path = realpath('./uploads/'); // upload directory
-mkdir($path, 0777, true);
 
 //<br />
 //<b>Warning</b>:  move_uploaded_file(uploads/659920,ndrtÙ*t.png):
@@ -31,6 +29,8 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
+        $path = realpath('./uploads/'); // upload directory
+        mkdir($path, 0777, true);
         $path = $path.strtolower($final_image);
 
         echo "file"; var_dump($file);
