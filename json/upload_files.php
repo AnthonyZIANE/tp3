@@ -32,7 +32,7 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
-        $path = realpath('..') . "/img/upload/";
+        $path = "/img/upload/"; //realpath
         @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
@@ -42,12 +42,12 @@ if (isset($_FILES['image_file']))
 
 
 
-//        $name = 'test';
-//        $email = 'test@test.cc';
-//        $db->query(
-//            "INSERT uploading (name, email, file_name) ".
-//            "VALUES ('".$name."','".$email."','".$final_filename."')"
-//        );
+        $name = 'test';
+        $email = 'test@test.cc';
+        $db->query(
+            "INSERT uploading (name, email, file_name) ".
+            "VALUES ('".$name."','".$email."','".$final_filename."')"
+        );
 
 
 
