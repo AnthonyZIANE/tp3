@@ -7,10 +7,11 @@ $obj->success = false;
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
 $path = 'uploads/'; // upload directory
-if (!empty($_POST['name']) || !empty($_POST['email']) || $_FILES['image'])
+if (isset($_FILES['image_file']))
 {
-    $img = $_FILES['image']['name'];
-    $tmp = $_FILES['image']['tmp_name'];
+    $file = $_FILES['image_file'];
+    $img = $file['name'];
+    $tmp = $file['tmp_name'];
     $obj ->message = $_FILES["image"]["error"];
     // get uploaded file's extension
     $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
@@ -20,15 +21,16 @@ if (!empty($_POST['name']) || !empty($_POST['email']) || $_FILES['image'])
     if(in_array($ext, $valid_extensions))
     {
         $path = $path.strtolower($final_image);
-        if(move_uploaded_file($tmp,$path))
+        if(move_uploaded_file($tmp, $path))
         {
-            echo "<img src='$path' />";
-            $name = $_POST['name'];
-            $email = $_POST['email'];
             //include database configuration file
             include_once 'connexion.php';
             //insert form data in the database
-            $insert = $db->query("INSERT uploading (name,email,file_name) VALUES ('".$name."','".$email."','".$path."')");
+            $insert = $db->query(
+//                "INSERT uploading (name, email, file_name) ".
+//                "VALUES ('".$name."','".$email."','".$path."')"
+                "INSERT uploading (file_name) VALUES ('".$path."')"
+            );
             $obj ->message = "Réception ok";
             $obj ->success = true;
             //echo $insert?'ok':'err';
