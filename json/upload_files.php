@@ -33,7 +33,7 @@ if (isset($_FILES['image_file']))
     if(in_array($ext, $valid_extensions))
     {
         $path = "/img/upload/";
-//        @mkdir($path, 0777, true);
+        @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
             $final_filename = $path . strtolower($final_image);
@@ -42,12 +42,12 @@ if (isset($_FILES['image_file']))
 
 
 
-        $name = 'test';
-        $email = 'test@test.cc';
-        $db->query(
-            "INSERT uploading (name, email, file_name) ".
-            "VALUES ('".$name."','".$email."','".$final_filename."')"
-        );
+//        $name = 'test';
+//        $email = 'test@test.cc';
+//        $db->query(
+//            "INSERT uploading (name, email, file_name) ".
+//            "VALUES ('".$name."','".$email."','".$final_filename."')"
+//        );
 
 
 
