@@ -16,7 +16,7 @@ $(function() {
 
     // Initialize the jQuery File Upload widget:
     let $file_el = $('#fileupload');
-    $('#fileupload').fileupload({
+    $file_el.fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
         url: 'json/upload_files.php'
@@ -41,7 +41,7 @@ $(function() {
     }).always(function() {
         $(this).removeClass('fileupload-processing');
     }).done(function(result) {
-        $(this)
+        $file_el
             .fileupload('option', 'done')
             // eslint-disable-next-line new-cap
             .call(this, $.Event('done'), { result: result });
