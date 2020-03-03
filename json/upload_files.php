@@ -18,10 +18,13 @@ $path = 'uploads/'; // upload directory
 if (isset($_FILES['image_file']))
 {
     $file = $_FILES['image_file'];
-    var_dump($file);
     $img = $file['name'];
     $tmp = $file['tmp_name'];
     $obj ->message = $_FILES["image"]["error"];
+
+    var_dump($file);
+    var_dump($img);
+    var_dump($tmp);
     // get uploaded file's extension
     $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
     // can upload same image using rand function
