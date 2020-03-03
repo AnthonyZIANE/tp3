@@ -1,3 +1,7 @@
+<?php
+define('WWW_ROOT',dirname(dirname(__FILE__)));
+define('CONSTI',WWW_ROOT);
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -11,8 +15,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-<?php include 'json/upload_files.php' ?>
-<div class="cst"><a href='<?= CONSTI ?>'>/div>
+<div class="cst"><a href='<?= CONSTI ?>'></div>
 <div id="haut">
     <img class="photo1" src="/img/photo.png" alt="photo"/>
     <p class="share">Share your Photos !</p>
