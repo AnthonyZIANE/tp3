@@ -27,6 +27,8 @@ if (isset($_FILES['image_file']))
         do {
             $final_image = rand().$img;
             $final_filename = $path . strtolower($final_image);
+            echo "final_filename : "; var_dump($final_filename);
+            echo "final_image : "; var_dump($final_image);
         } while (file_exists($final_filename));
 
         if(move_uploaded_file($tmp, $path))
