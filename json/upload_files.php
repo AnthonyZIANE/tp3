@@ -1,4 +1,5 @@
 <?php
+require_once 'connexion.php';
 
 $obj = new stdClass();
 $obj->message = "Aucun fichier";
@@ -24,7 +25,6 @@ if (isset($_FILES['image_file']))
         if(move_uploaded_file($tmp, $path))
         {
             //include database configuration file
-            include_once 'connexion.php';
             //insert form data in the database
             $insert = $db->query(
 //                "INSERT uploading (name, email, file_name) ".
