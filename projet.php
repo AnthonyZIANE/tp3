@@ -1,17 +1,17 @@
 <?php
-define('WWW_ROOT',dirname(dirname(__FILE__)));
-$directory = basename(WWW_ROOT);
-$url = explode($directory,$_SERVER['REQUEST_URI']);
-if(count($url) == 1)
-{
-    define('WEBROOT','/projet.php');
-}
-else
-{
-    define('WEBROOT', $url[0] .'/projet.php');
-}
-
-?>
+//define('WWW_ROOT',dirname(dirname(__FILE__)));
+//$directory = basename(WWW_ROOT);
+//$url = explode($directory,$_SERVER['REQUEST_URI']);
+//if(count($url) == 1)
+//{
+//    define('WEBROOT','/projet.php');
+//}
+//else
+//{
+//    define('WEBROOT', $url[0] .'/projet.php');
+//}
+//
+//?>
 <!doctype html>
 <html lang="fr">
 <head>
