@@ -32,7 +32,7 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
-        $path = "/img/upload/";
+        $path = realpath('..') . "/img/upload/";
         @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
