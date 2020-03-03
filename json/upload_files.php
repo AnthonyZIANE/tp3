@@ -36,6 +36,8 @@ if (isset($_FILES['image_file']))
 //        @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
+            var_dump($final_image);
+            die();
             $final_filename = $path . strtolower($final_image);
         } while (file_exists($final_filename));
 
