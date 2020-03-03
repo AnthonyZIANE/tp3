@@ -32,7 +32,7 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
-        $path = WEBROOT."img/upload/";
+        $path = "/img/upload/";
 //        @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
@@ -42,7 +42,7 @@ if (isset($_FILES['image_file']))
 
 
 
-        $name = 'test1';
+        $name = 'test';
         $email = 'test@test.cc';
         $db->query(
             "INSERT uploading (name, email, file_name) ".
@@ -69,7 +69,7 @@ if (isset($_FILES['image_file']))
             )) {
                 $obj->message = "Réception ok";
                 $obj->success = true;
-                $obj->final_filename = '/uploads/'. $final_image;
+                $obj->final_filename = 'img/uploads/'. $final_image;
             } else {
                 $obj->message = "Erreur base de données ! ".mysqli_error($db);
             }
