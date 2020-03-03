@@ -9,11 +9,11 @@ $directory = basename(WWW_ROOT);
 $url = explode($directory,$_SERVER['REQUEST_URI']);
 if(count($url) == 1)
 {
-    define('WEBROOT','/projet.php');
+    define('WEBROOT','/');
 }
 else
 {
-    define('WEBROOT', $url[0] .'/projet.php');
+    define('WEBROOT', $url[0] .'/');
 }
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
@@ -32,10 +32,8 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
-        $path = realpath('..') . '/uploads/'; // upload directory
-        var_dump($path);
-        @mkdir($path, 0777, true);
-        var_dump($path);
+        $path = WEBROOT."img/upload/";
+//        @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
             $final_filename = $path . strtolower($final_image);
