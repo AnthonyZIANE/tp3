@@ -8,6 +8,7 @@ $obj->success = false;
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
 $path = realpath('./uploads/'); // upload directory
+mkdir($path, 0777, true);
 
 //<br />
 //<b>Warning</b>:  move_uploaded_file(uploads/659920,ndrtÙ*t.png):
