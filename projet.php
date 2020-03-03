@@ -21,7 +21,7 @@
 <div id="centre">
     <form id="form-upload" class="form2" action="json/upload_files.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
-        <input class="bouton2" type="file" name="lefichier" />
+        <input class="bouton2" type="file" name="image_file" />
         <input class="envoyer" type="submit" value="Envoyer" />
 
     </form>
