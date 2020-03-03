@@ -8,9 +8,17 @@ $obj->success = false;
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
 $path = 'uploads/'; // upload directory
+
+//<br />
+//<b>Warning</b>:  move_uploaded_file(uploads/659920,ndrtÙ*t.png):
+// failed to open stream: No such file or directory in
+// <b>/home/anthonyziane/projet/json/upload_files.php</b> on line <b>25</b><br />
+//<br />
+//<b>Warning</b>:  move_uploaded_file(): Unable to move '/home/anthonyziane/admin/tmp/phpY4fwZm' to 'uploads/659920,ndrtÙ*t.png' in <b>/home/anthonyziane/projet/json/upload_files.php</b> on line <b>25</b><br />
 if (isset($_FILES['image_file']))
 {
     $file = $_FILES['image_file'];
+    var_dump($file);
     $img = $file['name'];
     $tmp = $file['tmp_name'];
     $obj ->message = $_FILES["image"]["error"];
