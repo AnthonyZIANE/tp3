@@ -23,15 +23,13 @@ if (isset($_FILES['image_file']))
     if(in_array($ext, $valid_extensions))
     {
         $path = realpath('.') . '/uploads/'; // upload directory
-        mkdir($path, 0777, true);
+        @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
             $final_filename = $path . strtolower($final_image);
-            echo "final_filename : "; var_dump($final_filename);
-            echo "final_image : "; var_dump($final_image);
         } while (file_exists($final_filename));
 
-        if(move_uploaded_file($tmp, $path))
+        if(move_uploaded_file($tmp, $final_filename))
         {
             //include database configuration file
             //insert form data in the database
