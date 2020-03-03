@@ -19,7 +19,15 @@ $(document).ready(function (e) {
                     {
                         // view uploaded file.
                         if (data.hasOwnProperty('final_filename')) {
-                            $("#preview").html(data.final_filename).fadeIn();
+                            // $("#preview").html(data.final_filename).fadeIn();
+                            $("#preview").empty().append(
+                                $('<img />')
+                                    .attr({'src': data.final_filename})
+                                    .css({
+                                        'width': '300px',
+                                        'height': 'auto'
+                                    })
+                            ).fadeIn(1000);
                             $("#form-upload")[0].reset();
                         }
                     }
