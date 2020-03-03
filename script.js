@@ -14,16 +14,22 @@ $(document).ready(function (e) {
             },
             success: function(data)
             {
-                if (data === 'invalid')
-                {
-                    // invalid file format.
-                    $("#err").html("Invalid File !").fadeIn();
-                }
-                else
-                {
-                    // view uploaded file.
-                    $("#preview").html(data).fadeIn();
-                    $("#form")[0].reset();
+                if (data.hasOwnProperty('success')) {
+                    if (data.success)
+                    {
+                        // view uploaded file.
+                        if (data.hasOwnProperty('final_filename')) {
+                            $("#preview").html(data.final_filename).fadeIn();
+                            $("#form")[0].reset();
+                        }
+                    }
+                    else
+                    {
+                        // invalid file format.
+                        $("#err").html("Invalid File !").fadeIn();
+                    }
+                } else {
+                    $("#err").html('Erreur inattendue').fadeIn();
                 }
             },
             error: function(e)

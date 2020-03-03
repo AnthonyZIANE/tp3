@@ -8,12 +8,6 @@ $obj->success = false;
 
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
 
-//<br />
-//<b>Warning</b>:  move_uploaded_file(uploads/659920,ndrtÙ*t.png):
-// failed to open stream: No such file or directory in
-// <b>/home/anthonyziane/projet/json/upload_files.php</b> on line <b>25</b><br />
-//<br />
-//<b>Warning</b>:  move_uploaded_file(): Unable to move '/home/anthonyziane/admin/tmp/phpY4fwZm' to 'uploads/659920,ndrtÙ*t.png' in <b>/home/anthonyziane/projet/json/upload_files.php</b> on line <b>25</b><br />
 if (isset($_FILES['image_file']))
 {
     $file = $_FILES['image_file'];
@@ -31,7 +25,7 @@ if (isset($_FILES['image_file']))
     {
         $path = realpath('.') . '/uploads/'; // upload directory
         mkdir($path, 0777, true);
-        $path = $path . strtolower($final_image);
+        $final_filename = $path . strtolower($final_image);
 
         if(move_uploaded_file($tmp, $path))
         {
@@ -41,12 +35,13 @@ if (isset($_FILES['image_file']))
             $email = 'test@test.cc';
             if ($db->query(
                 "INSERT uploading (name, email, file_name) ".
-                "VALUES ('".$name."','".$email."','".$path."')"
+                "VALUES ('".$name."','".$email."','".$final_filename."')"
             )) {
-                $obj ->message = "Réception ok";
-                $obj ->success = true;
+                $obj->message = "Réception ok";
+                $obj->success = true;
+                $obj->final_filename = $final_filename;
             } else {
-                $obj ->message = "Erreur base de données ! ".mysqli_error($db);
+                $obj->message = "Erreur base de données ! ".mysqli_error($db);
             }
         }
     }
