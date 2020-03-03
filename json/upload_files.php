@@ -5,7 +5,17 @@ $obj = new stdClass();
 $obj->message = "Aucun fichier";
 $obj->success = false;
 define('WWW_ROOT',dirname(dirname(__FILE__)));
-define('CONSTI',WWW_ROOT);
+$directory = basename(WWW_ROOT);
+$url = explode($directory,$_SERVER['REQUEST_URI']);
+if(count($url) == 1)
+{
+    define('WEBROOT','/projet.php');
+}
+else
+{
+    define('WEBROOT', $url[0] .'/projet.php');
+}
+
 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
 
 if (isset($_FILES['image_file']))

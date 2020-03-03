@@ -42,7 +42,6 @@ else
 </div>
 <div id="preview" style="display: none"></div>
 <div id="centre2">
-    <a href='<?= WEBROOT ?>'>test
 </div>
 <div id="bas">
     <img class="logo1" src="/img/html.png" alt="logo"/>
