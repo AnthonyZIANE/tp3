@@ -23,9 +23,9 @@
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
         <input class="bouton2" type="file" name="image_file" />
         <input class="envoyer" type="submit" value="Envoyer" />
-
     </form>
 </div>
+<div id="preview" style="display: none"></div>
 <div id="centre2">
 </div>
 <div id="bas">

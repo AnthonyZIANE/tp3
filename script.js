@@ -20,7 +20,7 @@ $(document).ready(function (e) {
                         // view uploaded file.
                         if (data.hasOwnProperty('final_filename')) {
                             $("#preview").html(data.final_filename).fadeIn();
-                            $("#form")[0].reset();
+                            $("#form-upload")[0].reset();
                         }
                     }
                     else
