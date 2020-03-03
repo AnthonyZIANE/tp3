@@ -30,29 +30,24 @@ if (isset($_FILES['image_file']))
     if(in_array($ext, $valid_extensions))
     {
         $path = realpath('.') . '/uploads/'; // upload directory
-        echo "path : "; var_dump($path);
         mkdir($path, 0777, true);
         $path = $path . strtolower($final_image);
-        echo "path : "; var_dump($path);
-
-        echo "file : "; var_dump($file);
-        echo "obj : "; var_dump($obj);
-        echo "tmp : "; var_dump($tmp);
-
-
 
         if(move_uploaded_file($tmp, $path))
         {
             //include database configuration file
             //insert form data in the database
-            $insert = $db->query(
-//                "INSERT uploading (name, email, file_name) ".
-//                "VALUES ('".$name."','".$email."','".$path."')"
-                "INSERT uploading (file_name) VALUES ('".$path."')"
-            );
-            $obj ->message = "Réception ok";
-            $obj ->success = true;
-            //echo $insert?'ok':'err';
+            $name = 'test';
+            $email = 'test@test.cc';
+            if ($db->query(
+                "INSERT uploading (name, email, file_name) ".
+                "VALUES ('".$name."','".$email."','".$path."')"
+            )) {
+                $obj ->message = "Réception ok";
+                $obj ->success = true;
+            } else {
+                $obj ->message = "Erreur base de données ! ".mysqli_error($db);
+            }
         }
     }
     else
