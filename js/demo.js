@@ -16,7 +16,7 @@ $(function() {
 
     // Initialize the jQuery File Upload widget:
     let $file_el = $('#fileupload');
-    $file_el.fileupload({
+    $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
         url: 'json/upload_files.php'

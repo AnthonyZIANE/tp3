@@ -27,7 +27,6 @@
 })(function($) {
   'use strict';
 
-    console.log('lkdjfsdlkfj');
   // Detect file input support, based on
   // https://viljamis.com/2012/file-upload-support-on-mobile/
   $.support.fileInput = !(
