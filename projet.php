@@ -19,7 +19,7 @@
 <div class="deco">
 </div>
 <div id="centre">
-    <form class="form2" action="json/upload_files.php" method="post" enctype="multipart/form-data">
+    <form id="form-upload" class="form2" action="json/upload_files.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
         <input class="bouton2" type="file" name="lefichier" />
         <input class="envoyer" type="submit" value="Envoyer" />

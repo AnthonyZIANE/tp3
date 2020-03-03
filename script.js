@@ -1,6 +1,5 @@
 $(document).ready(function (e) {
-    $("#form").on('submit',(function(e) {
-        e.preventDefault();
+    $("#form-upload").on('submit',(function(e) {
         $.ajax({
             url: "json/upload_files.php",
             type: "POST",
@@ -15,7 +14,7 @@ $(document).ready(function (e) {
             },
             success: function(data)
             {
-                if(data=='invalid')
+                if (data === 'invalid')
                 {
                     // invalid file format.
                     $("#err").html("Invalid File !").fadeIn();
@@ -32,5 +31,6 @@ $(document).ready(function (e) {
                 $("#err").html(e).fadeIn();
             }
         });
+        return false;
     }));
 });
