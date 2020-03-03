@@ -32,10 +32,6 @@ $(function() {
 
     // Load existing files:
     $file_el.addClass('fileupload-processing');
-    console.log($file_el.fileupload('option', 'url'));
-    console.log($file_el.fileupload('option', 'url'));
-    console.log($file_el.fileupload('option', 'url'));
-    console.log($file_el.fileupload('option', 'url'));
     $.ajax({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
