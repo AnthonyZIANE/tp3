@@ -12,6 +12,7 @@
 <body>
 <?php
 include ("transfert.php");
+var_dump($_FILES);
 if ( isset($_FILES['fic']) )
 {
     transfert();
