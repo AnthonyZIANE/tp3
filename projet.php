@@ -4,11 +4,11 @@ $directory = basename(WWW_ROOT);
 $url = explode($directory,$_SERVER['REQUEST_URI']);
 if(count($url) == 1)
 {
-    define('WEBROOT','/');
+    define('WEBROOT','/projet.php');
 }
 else
 {
-    define('WEBROOT', $url[0] .'/');
+    define('WEBROOT', $url[0] .'/projet.php');
 }
 
 ?>
