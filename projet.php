@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Sharing Photos</title>
-    <link rel="stylesheet" href="IMG/style1.css">
+    <link rel="stylesheet" href="img/style1.css">
     <link rel="icon" type="image/png" href="IMG/partage.png"/>
-    <script src="jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="test.js"></script>
     <script src="login.js"></script>
 </head>
