@@ -29,15 +29,15 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
-        $path = realpath('./uploads/'); // upload directory
-        echo "path :\n"; var_dump($path);
+        $path = realpath('.') . '/uploads/'; // upload directory
+        echo "path : "; var_dump($path);
         mkdir($path, 0777, true);
         $path = $path . strtolower($final_image);
-        echo "path :\n"; var_dump($path);
+        echo "path : "; var_dump($path);
 
-        echo "file :\n"; var_dump($file);
-        echo "obj :\n"; var_dump($obj);
-        echo "tmp :\n"; var_dump($tmp);
+        echo "file : "; var_dump($file);
+        echo "obj : "; var_dump($obj);
+        echo "tmp : "; var_dump($tmp);
 
 
 
