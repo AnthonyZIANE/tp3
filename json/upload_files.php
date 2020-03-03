@@ -18,14 +18,16 @@ if (isset($_FILES['image_file']))
     // get uploaded file's extension
     $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
     // can upload same image using rand function
-    $final_image = rand(1000,1000000).$img;
 
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
         $path = realpath('.') . '/uploads/'; // upload directory
         mkdir($path, 0777, true);
-        $final_filename = $path . strtolower($final_image);
+        do {
+            $final_image = rand().$img;
+            $final_filename = $path . strtolower($final_image);
+        } while (file_exists($final_filename));
 
         if(move_uploaded_file($tmp, $path))
         {
