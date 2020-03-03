@@ -33,7 +33,9 @@ if (isset($_FILES['image_file']))
     if(in_array($ext, $valid_extensions))
     {
         $path = realpath('..') . '/uploads/'; // upload directory
+        var_dump($path);
         @mkdir($path, 0777, true);
+        var_dump($path);
         do {
             $final_image = rand().$img;
             $final_filename = $path . strtolower($final_image);
