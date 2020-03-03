@@ -22,17 +22,22 @@ if (isset($_FILES['image_file']))
     $tmp = $file['tmp_name'];
     $obj ->message = $_FILES["image"]["error"];
 
-    var_dump($file);
-    var_dump($img);
-    var_dump($tmp);
     // get uploaded file's extension
     $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
     // can upload same image using rand function
     $final_image = rand(1000,1000000).$img;
+
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
         $path = $path.strtolower($final_image);
+
+        echo "file"; var_dump($file);
+        echo "obj"; var_dump($obj);
+        echo "tmp"; var_dump($tmp);
+        echo "path"; var_dump($path);
+
+
         if(move_uploaded_file($tmp, $path))
         {
             //include database configuration file
