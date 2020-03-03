@@ -5,6 +5,7 @@ if(!empty($_POST['name']) || !empty($_POST['email']) || $_FILES['image'])
 {
     $img = $_FILES['image']['name'];
     $tmp = $_FILES['image']['tmp_name'];
+    $errorimg = $_FILES["image"][“error”];
     // get uploaded file's extension
     $ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
     // can upload same image using rand function
@@ -29,6 +30,9 @@ if(!empty($_POST['name']) || !empty($_POST['email']) || $_FILES['image'])
     {
         echo 'invalid';
     }
+}
+if($errorimg > 0){
+    die('<div class="alert alert-danger" role="alert"> An error occurred while uploading the file </div>');
 }
 
 ?>

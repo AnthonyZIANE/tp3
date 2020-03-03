@@ -5,7 +5,7 @@
     <title>Sharing Photos</title>
     <link rel="stylesheet" href="img/style1.css">
     <link rel="icon" type="image/png" href="img/partage.png"/>
-    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>">
     <script src="test.js"></script>
     <script src="login.js"></script>
     <script src="script.js"></script>
