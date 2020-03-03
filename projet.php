@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Sharing Photos</title>
     <link rel="stylesheet" href="img/style1.css">
-    <link rel="icon" type="image/png" href="IMG/partage.png"/>
+    <link rel="icon" type="image/png" href="img/partage.png"/>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="test.js"></script>
     <script src="login.js"></script>
@@ -13,10 +13,10 @@
 <body>
 
 <div id="haut">
-         <img class="photo1" src="/IMG/photo.png" alt="photo"/>
+         <img class="photo1" src="/img/photo.png" alt="photo"/>
         <p class="share">Share your Photos !</p>
 <!--        <div id="message2"></div>-->
-        <img class="photo2" src="/IMG/photo2.png" alt="photo"/>
+        <img class="photo2" src="/img/photo2.png" alt="photo"/>
 </div>
 <div class="deco">
 </div>
@@ -32,11 +32,11 @@
 <div id="centre2">
 </div>
 <div id="bas">
-        <img class="logo1" src="/IMG/html.png" alt="logo"/>
-        <img class="logo2" src="/IMG/css.png" alt="logo"/>
+        <img class="logo1" src="/img/html.png" alt="logo"/>
+        <img class="logo2" src="/img/css.png" alt="logo"/>
         <p class="toto">Anthony Ziane</p>
-        <img class="logo3" src="/IMG/js.png" alt="logo"/>
-        <img class="logo4" src="/IMG/jquery.png" alt="logo"/>
+        <img class="logo3" src="/img/js.png" alt="logo"/>
+        <img class="logo4" src="/img/jquery.png" alt="logo"/>
 </div>
 <script>
     $( ".bouton2" ).hover(function() {
