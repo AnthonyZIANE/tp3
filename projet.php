@@ -12,16 +12,16 @@
 </head>
 <body>
 <div id="haut">
-         <img class="photo1" src="/img/photo.png" alt="photo"/>
-        <p class="share">Share your Photos !</p>
-        <img class="photo2" src="/img/photo2.png" alt="photo"/>
+    <img class="photo1" src="/img/photo.png" alt="photo"/>
+    <p class="share">Share your Photos !</p>
+    <img class="photo2" src="/img/photo2.png" alt="photo"/>
 </div>
 <div class="deco">
 </div>
 <div id="centre">
     <form class="form2" action="json/upload_files.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
-        <input class="bouton2" type="file" name="lefichier" size=50>
+        <input class="bouton2" type="file" name="lefichier" />
         <input class="envoyer" type="submit" value="Envoyer" />
 
     </form>
@@ -29,11 +29,11 @@
 <div id="centre2">
 </div>
 <div id="bas">
-        <img class="logo1" src="/img/html.png" alt="logo"/>
-        <img class="logo2" src="/img/css.png" alt="logo"/>
-        <p class="toto">Anthony Ziane</p>
-        <img class="logo3" src="/img/js.png" alt="logo"/>
-        <img class="logo4" src="/img/jquery.png" alt="logo"/>
+    <img class="logo1" src="/img/html.png" alt="logo"/>
+    <img class="logo2" src="/img/css.png" alt="logo"/>
+    <p class="toto">Anthony Ziane</p>
+    <img class="logo3" src="/img/js.png" alt="logo"/>
+    <img class="logo4" src="/img/jquery.png" alt="logo"/>
 </div>
 <script>
     $( ".bouton2" ).hover(function() {
