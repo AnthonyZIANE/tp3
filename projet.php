@@ -25,7 +25,7 @@ else
     <script src="script.js"></script>
 </head>
 <body>
-<div class="cst"><a href='<?= WEBROOT ?>'>test</div>
+
 <div id="haut">
     <img class="photo1" src="/img/photo.png" alt="photo"/>
     <p class="share">Share your Photos !</p>
@@ -50,6 +50,7 @@ else
     <img class="logo3" src="/img/js.png" alt="logo"/>
     <img class="logo4" src="/img/jquery.png" alt="logo"/>
 </div>
+<div class="cst"><a href='<?= WEBROOT ?>'>test</div>
 <script>
     $( ".bouton2" ).hover(function() {
         $( this ).fadeOut( 500, 'linear');
