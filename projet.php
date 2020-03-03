@@ -42,6 +42,7 @@ else
 </div>
 <div id="preview" style="display: none"></div>
 <div id="centre2">
+    <a href='<?= WEBROOT ?>'>test
 </div>
 <div id="bas">
     <img class="logo1" src="/img/html.png" alt="logo"/>
@@ -50,7 +51,7 @@ else
     <img class="logo3" src="/img/js.png" alt="logo"/>
     <img class="logo4" src="/img/jquery.png" alt="logo"/>
 </div>
-<div class="cst"><a href='<?= WEBROOT ?>'>test</div>
+<!--<div class="cst"><a href='--><?//= WEBROOT ?><!--'>test</div>-->
 <script>
     $( ".bouton2" ).hover(function() {
         $( this ).fadeOut( 500, 'linear');
