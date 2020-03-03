@@ -15,7 +15,6 @@
 <div id="haut">
          <img class="photo1" src="/img/photo.png" alt="photo"/>
         <p class="share">Share your Photos !</p>
-<!--        <div id="message2"></div>-->
         <img class="photo2" src="/img/photo2.png" alt="photo"/>
 </div>
 <div class="deco">
