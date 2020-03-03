@@ -8,16 +8,10 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="test.js"></script>
     <script src="login.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
-<?php
-include ("transfert.php");
-var_dump($_FILES);
-if ( isset($_FILES['fic']) )
-{
-    transfert();
-}
-?>
+
 <div id="haut">
          <img class="photo1" src="/IMG/photo.png" alt="photo"/>
         <p class="share">Share your Photos !</p>
@@ -28,7 +22,7 @@ if ( isset($_FILES['fic']) )
 </div>
 <p><a href="liste.php">Liste</a></p>
 <div id="centre">
-    <form class="form2" action="#" method="post" enctype="multipart/form-data">
+    <form class="form2" action="json/upload_files.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
         <input class="bouton2" type="file" name="lefichier" size=50>
         <input class="envoyer" type="submit" value="Envoyer" />
