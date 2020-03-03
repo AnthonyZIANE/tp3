@@ -1,5 +1,5 @@
 <?php
-require_once '../connexion.php';
+require'../connexion.php';
 
 $obj = new stdClass();
 $obj->message = "Aucun fichier";
