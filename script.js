@@ -20,10 +20,11 @@ $(document).ready(function (e) {
                         // view uploaded file.
                         if (data.hasOwnProperty('final_filename')) {
                             // $("#preview").html(data.final_filename).fadeIn();
-                            $("#preview").empty().append(
+                            $("#centre2").empty().append(
                                 $('<img />')
                                     .attr({'src': data.final_filename})
                                     .css({
+                                        'border': '0.5px solid black',
                                         'width': '300px',
                                         'height': 'auto'
                                     })
