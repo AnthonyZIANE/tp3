@@ -32,14 +32,17 @@ if (isset($_FILES['image_file']))
     // check's valid format
     if(in_array($ext, $valid_extensions))
     {
-        $path = "/img/upload/"; //realpath
+        $path ="/img/upload/"; //realpath
         @mkdir($path, 0777, true);
         do {
             $final_image = rand().$img;
             $final_filename = $path . strtolower($final_image);
         } while (file_exists($final_filename));
 
-
+    if(move_uploaded_file($tmp, $path))
+    {
+        $obj->message = "Réception ok";
+    }
 
 
         $name = 'test';
@@ -47,6 +50,7 @@ if (isset($_FILES['image_file']))
         $db->query(
             "INSERT uploading (name, email, file_name) ".
             "VALUES ('".$name."','".$email."','".$final_filename."')"
+
         );
 
 
@@ -57,28 +61,28 @@ if (isset($_FILES['image_file']))
 
 
 
-        if(move_uploaded_file($tmp, $final_filename))
-        {
-            //include database configuration file
-            //insert form data in the database
-            $name = 'test';
-            $email = 'test@test.cc';
-            if ($db->query(
-                "INSERT uploading (name, email, file_name) ".
-                "VALUES ('".$name."','".$email."','".$final_filename."')"
-            )) {
-                $obj->message = "Réception ok";
-                $obj->success = true;
-                $obj->final_filename = 'img/uploads/'. $final_image;
-            } else {
-                $obj->message = "Erreur base de données ! ".mysqli_error($db);
-            }
+//        if(move_uploaded_file($tmp, $final_filename))
+//        {
+//            //include database configuration file
+//            //insert form data in the database
+//            $name = 'test';
+//            $email = 'test@test.cc';
+//            if ($db->query(
+//                "INSERT uploading (name, email, file_name) ".
+//                "VALUES ('".$name."','".$email."','".$final_filename."')"
+//            )) {
+//                $obj->message = "Réception ok";
+//                $obj->success = true;
+//                $obj->final_filename = "img/uploads/" . $final_image;
+//            } else {
+//                $obj->message = "Erreur base de données ! ".mysqli_error($db);
+//            }
         }
     }
     else
     {
         $obj ->message = "Ce fichier n'est pas une image!";
-    }
+//    }
 }
 
 

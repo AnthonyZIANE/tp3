@@ -14,11 +14,20 @@
         <form class="form-login" action="json/login.php" method="post">
             <input type="text" name="username" placeholder="Identifiant"/>
             <input type="password" name="password" placeholder="Mot de passe"/>
-            <button>Se connecter</button>
+            <button name="connec">Se connecter</button>
         </form>
     </div>
 </div>
 <div id="message">
+</div>
+<div class="register">
+    <div class="form">
+        <form class="form-register" action="json/inscription.php" method="post">
+            <input type="text" name="username1" placeholder="Identifiant"/>
+            <input type="password" name="password1" placeholder="Mot de passe"/>
+            <button name="inscr">S'inscrire</button>
+        </form>
+    </div>
 </div>
 <script>
     $( ".form button" ).hover(function() {
