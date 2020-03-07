@@ -10,14 +10,13 @@
                 data : $(this).serialize()
             }).done(function (data) {
                 if(data.success === true) {
-                    window.location.href = 'projet.php';
+                    window.location.href = '../projet.php';
                 } else if (data.success === false) { // data.success === false
                     $('#message').html(data.message).fadeIn().css("color","#FF0000");
                 }
             }).fail(function () {
                 $('body').html('Une erreur critique est arrivée.');
             });
-            console.log("erreur");
             return false; // bloque envoi formulaire automatique
         });
     });

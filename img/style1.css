@@ -11,7 +11,7 @@ html {
 
 .login-page {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 2% 0;
     margin: auto;
 
 }
@@ -99,7 +99,7 @@ html {
 
 .register {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 1%;
     margin: auto;
 
 }
@@ -108,7 +108,7 @@ html {
     z-index: 1;
     background: #FFFFFF;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 0 auto 44px;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -190,6 +190,20 @@ html {
 {
     text-align: center;
     font-family: "Verdana", sans-serif;
+}
+
+#message1
+{
+    margin-bottom: 45px;
+    text-align: center;
+    font-family: "Verdana", sans-serif;
+}
+
+.vide
+{
+
+    color : red;
+    display: none;
 }
 
 #haut

@@ -23,13 +23,13 @@
                                 url: 'json/logout.php',
                                 method : 'get'
                             }).done(function () {
-                                window.location.href='/projet.php';
+                                window.location.href='../projet.php';
 
                             })
                         })
                 )
             } else {
-                window.location.href = '/index.html';
+                window.location.href = '/index.php';
             }
         });
 
@@ -39,19 +39,6 @@
 
 }) ();
 
-
-(function () {
-    'use strict';
-     $(() => {
-         $.ajax({
-             url :'json/transfert.php',
-             method: 'get'
-
-         }).done()
-     });
-
-
-}) ();
 $('.message a').click(function(){
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });

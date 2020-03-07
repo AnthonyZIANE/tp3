@@ -1,28 +1,67 @@
-<?php
 
+<?php
 
 require'../connexion.php';
 
+$obj = new stdClass();
+$obj->message = " ! Vous voilà inscrit ! ";
+$obj->success = false;
 
+$u = $_POST['username1'];
+$p = $_POST['password1'];
+$p2 = $_POST['password2'];
 
-if(isset($_POST['username1'],$_POST['password1'])){
-    if(empty($_POST['username1'])){
-        echo "Le champ Pseudo est vide.";
-    } elseif(!preg_match("#^[a-z0-9]+$#",$_POST['username1'])){
-        echo "Le Pseudo doit être renseigné en lettres minuscules sans accents, sans caractères spéciaux.";
-    } elseif(strlen($_POST['username1'])>25){
-        echo "Le pseudo est trop long, il dépasse 25 caractères.";
-    } elseif(empty($_POST['password1'])){
-        echo "Le champ Mot de passe est vide.";
-    } elseif(mysqli_num_rows(mysqli_query($db,"SELECT * FROM user WHERE username='".$_POST['username1']."'"))==1){
-        echo "Ce pseudo est déjà utilisé.";
-    } else {
-        if(!mysqli_query($db,"INSERT INTO user SET username='".$_POST['username1']."', password='".md5($_POST['password1'])."'")){
-            echo "Une erreur s'est produite: ".mysqli_error($db);
-        } else {
-            echo "Vous êtes inscrit avec succès!";
+if(!empty(trim($u)) && !empty(trim($p)))
+{
+    $sql = ("SELECT username FROM user WHERE username = :username");
+    $req = $bdd->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+    $req->execute(array('username' => $u));
+    if($req->rowCount())
+    {
+        $obj->message =  "Identifiant déjà utilisé !";
 
+    }elseif(!preg_match("#^[a-z0-9]+$#",$u))
+    {
+        $obj->message = "Veuillez ne pas utiliser de caractères spéciaux !";
 
-        }
+    }elseif(!preg_match("#^[a-z0-9]+$#",$p))
+    {
+        $obj->message = "Veuillez ne pas utiliser de caractères spéciaux !";
+
+    }elseif(strlen($u)>10)
+    {
+        $obj->message = "L'identifiant comporte plus de 10 caractères !";
+
+    }elseif (strlen($p)>10)
+    {
+        $obj->message = "Le mot de passe comporte plus de 10 caractères !";
+
+    }elseif($p !== $p2)
+    {
+        $obj->message = "Veuillez saisir le même mot de passe !";
+
+    }else
+    {
+        $sql = ("INSERT INTO user (username, password) VALUES(:username, :password)");
+        $req1 = $bdd->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $req1->execute(array('username' => $u, 'password' => $p));
+        $obj->success = true;
     }
+
+}else{
+
+    $obj->message = "Merci de remplir tout les champs";
+
 }
+
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('Content-type: application/json');
+echo json_encode($obj);
+
+
+
+
+
+
+

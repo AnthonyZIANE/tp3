@@ -47,7 +47,7 @@ if (isset($_FILES['image_file']))
 
         $name = 'test';
         $email = 'test@test.cc';
-        $db->query(
+        $bdd->query(
             "INSERT uploading (name, email, file_name) ".
             "VALUES ('".$name."','".$email."','".$final_filename."')"
 
