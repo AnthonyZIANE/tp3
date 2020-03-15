@@ -14,12 +14,17 @@ $(document).ready(function (e) {
             },
             success: function(data)
             {
+                console.log("voiture");
+                console.log(data.message);
                 if (data.hasOwnProperty('success')) {
-                    if (data.success)
+                    console.log("voiture222");
+                    if (data.success === true)
                     {
+                        console.log("voiture222333");
                         // view uploaded file.
                         if (data.hasOwnProperty('final_filename')) {
-                            // $("#preview").html(data.final_filename).fadeIn();
+                        // $("#preview").html(data.final_filename).fadeIn();
+                            console.log("voiture222333444");
                             $("#centre2")
                                 .append(
                                 $('<img />')
@@ -31,8 +36,9 @@ $(document).ready(function (e) {
                                     })
                             ).fadeIn(1000);
                             $("#form-upload")[0].reset();
-                        }
+                         }
                     }
+
                     else
                     {
                         // invalid file format.

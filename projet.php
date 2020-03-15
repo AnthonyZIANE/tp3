@@ -1,17 +1,3 @@
-<?php
-//define('WWW_ROOT',dirname(dirname(__FILE__)));
-//$directory = basename(WWW_ROOT);
-//$url = explode($directory,$_SERVER['REQUEST_URI']);
-//if(count($url) == 1)
-//{
-//    define('WEBROOT','/projet.php');
-//}
-//else
-//{
-//    define('WEBROOT', $url[0] .'/projet.php');
-//}
-//
-//?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -34,11 +20,15 @@
 <div class="deco">
 </div>
 <div id="centre">
-    <form id="form-upload" class="form2" action="json/upload_files.php" method="post" enctype="multipart/form-data">
+    <form id="form-upload" action="json/upload_files.php" method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
         <input class="bouton2" type="file" name="image_file" />
-        <input class="envoyer" type="submit" value="Envoyer" />
+        <input class="envoyer" type="submit" value="Envoyer" name="send" />
     </form>
+<div id = err>
+</div>
+</div>
+<div id="message3">
 </div>
 <div id="preview" style="display: none"></div>
 <div id="centre2">
@@ -50,7 +40,7 @@
     <img class="logo3" src="/img/js.png" alt="logo"/>
     <img class="logo4" src="/img/jquery.png" alt="logo"/>
 </div>
-<!--<div class="cst"><a href='--><?//= WEBROOT ?><!--'>test</div>-->
+
 <script>
     $( ".bouton2" ).hover(function() {
         $( this ).fadeOut( 500, 'linear');
