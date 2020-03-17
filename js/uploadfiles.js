@@ -1,4 +1,5 @@
 $(document).ready(function (e) {
+    // photo();
     $("#form-upload").on('submit',(function(e) {
         $.ajax({
             url: "json/upload_files.php",
@@ -15,7 +16,6 @@ $(document).ready(function (e) {
             success: function(data)
             {
                 console.log("voiture");
-                console.log(data.message);
                 if (data.hasOwnProperty('success')) {
                     console.log("voiture222");
                     if (data.success === true)
@@ -23,20 +23,24 @@ $(document).ready(function (e) {
                         console.log("voiture222333");
                         // view uploaded file.
                         if (data.hasOwnProperty('final_filename')) {
-                        // $("#preview").html(data.final_filename).fadeIn();
+                            // $("#preview").html(data.final_filename).fadeIn();
                             console.log("voiture222333444");
+                            console.log(data.message);
+                            console.log(data.message2);
                             $("#centre2")
                                 .append(
-                                $('<img />')
-                                    .attr({'src': data.final_filename})
-                                    .css({
-                                        'border': '0.5px solid black',
-                                        'width': '300px',
-                                        'height': 'auto'
-                                    })
-                            ).fadeIn(1000);
-                            $("#form-upload")[0].reset();
-                         }
+                                    $('<img src="'+data.final_filename+'"/>')
+                                        .css({
+                                            'border': '0.5px solid black',
+                                            'width': '300px',
+                                            'height': 'auto'
+                                        })//,
+                                    // $('<button  class="deco" />')
+
+                                ).fadeIn(1000);
+
+                            // $("#form-upload")[0].reset();
+                        }
                     }
 
                     else
@@ -56,3 +60,20 @@ $(document).ready(function (e) {
         return false;
     }));
 });
+
+function photo() {
+    $.ajax({
+        url : "../json/cool.php",
+        method : "get"
+    }).done(function (data) {
+
+        if(data.success === true) {
+
+        } else if (data.success === false) { // data.success === false
+
+        }
+    }).fail(function () {
+        $('body').html('Une erreur critique est arrivée.');
+    });
+
+}

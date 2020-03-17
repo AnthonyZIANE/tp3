@@ -16,6 +16,7 @@
             <input type="text" name="username" placeholder="Identifiant" id="a1"/>
             <input type="password" name="password" placeholder="Mot de passe" id="a2"/>
             <button name="connect" id="connecter" type="submit">Se connecter</button>
+
         </form>
     </div>
 </div>

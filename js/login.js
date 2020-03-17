@@ -9,8 +9,10 @@
                 method : $(this).attr('method'),
                 data : $(this).serialize()
             }).done(function (data) {
+
                 if(data.success === true) {
-                    window.location.href = '../projet.php';
+                    console.log(data.message[0][0]);
+                     window.location.href = '../projet.php';
                 } else if (data.success === false) { // data.success === false
                     $('#message').html(data.message).fadeIn().css("color","#FF0000");
                 }

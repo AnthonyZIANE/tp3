@@ -19,7 +19,9 @@ if(!empty(trim($u)) && !empty(trim($p)))
   if($req->rowCount())
   {
       $obj->success = true;
-      $_SESSION['user'] = $u;
+      $id = $req->fetchAll();
+      $obj->message = $id;
+      $_SESSION['user'] = $id;
 
   }
 
@@ -28,6 +30,9 @@ if(!empty(trim($u)) && !empty(trim($p)))
     $obj->message = "Merci de remplir tout les champs";
 
 }
+
+
+
 
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
