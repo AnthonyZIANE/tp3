@@ -24,9 +24,10 @@
         <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
         <input class="bouton2" type="file" name="image_file" />
         <input class="envoyer" type="submit" value="Envoyer" name="send" />
+        <span>Seul le format JPG est accepté !</span>
     </form>
-<div id = err>
-</div>
+    <div id = err>
+    </div>
 </div>
 <div id="message3">
 </div>

@@ -16,18 +16,18 @@
                     $(this).fadeIn(500).stop();
                 })
                     .append(
-                    $('<button />')
-                        .html('Déconnexion')
-                        .click(function () {
-                            $.ajax({
-                                url: 'json/logout.php',
-                                method : 'get'
-                            }).done(function () {
-                                window.location.href='../projet.php';
+                        $('<button />')
+                            .html('Déconnexion')
+                            .click(function () {
+                                $.ajax({
+                                    url: 'json/logout.php',
+                                    method : 'get'
+                                }).done(function () {
+                                    window.location.href='../projet.php';
 
+                                })
                             })
-                        })
-                )
+                    )
             } else {
                 window.location.href = '/index.php';
             }

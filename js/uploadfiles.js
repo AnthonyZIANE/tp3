@@ -1,5 +1,5 @@
 $(document).ready(function (e) {
-    // photo();
+      photo();
     $("#form-upload").on('submit',(function(e) {
         $.ajax({
             url: "json/upload_files.php",
@@ -15,24 +15,18 @@ $(document).ready(function (e) {
             },
             success: function(data)
             {
-                console.log("voiture");
                 if (data.hasOwnProperty('success')) {
-                    console.log("voiture222");
                     if (data.success === true)
                     {
-                        console.log("voiture222333");
                         // view uploaded file.
                         if (data.hasOwnProperty('final_filename')) {
                             // $("#preview").html(data.final_filename).fadeIn();
-                            console.log("voiture222333444");
-                            console.log(data.message);
-                            console.log(data.message2);
                             $("#centre2")
                                 .append(
                                     $('<img src="'+data.final_filename+'"/>')
                                         .css({
                                             'border': '0.5px solid black',
-                                            'width': '300px',
+                                            'width': '480px',
                                             'height': 'auto'
                                         })//,
                                     // $('<button  class="deco" />')
@@ -63,14 +57,23 @@ $(document).ready(function (e) {
 
 function photo() {
     $.ajax({
-        url : "../json/cool.php",
+        url : "../json/photo.php",
         method : "get"
     }).done(function (data) {
-
+       console.log(data.message);
         if(data.success === true) {
-
+            data.message.forEach(img => {
+                $('#centre2')
+                    .append(
+                        $('<img/>')
+                            .attr({
+                                'src' : img + '.png',
+                                'alt' : 'image numero ' + img
+                            })
+                    )
+            })
         } else if (data.success === false) { // data.success === false
-
+            $('#message').html(data.message).fadeIn().css("color","#FF0000");
         }
     }).fail(function () {
         $('body').html('Une erreur critique est arrivée.');

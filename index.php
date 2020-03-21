@@ -83,7 +83,7 @@
                 $("#b3").css("border-color", "#FF0000");
                 z = false;
             }
-                return z;
+            return z;
         });
 
     });
