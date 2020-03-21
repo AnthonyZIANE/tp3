@@ -7,26 +7,18 @@ session_start();
 
 
 $obj = new stdClass();
-$obj->message = "test";
+//$obj->message = "test";
 $obj->success = false;
+$aa = $_SESSION['user'];
 
-
-$sql = ("SELECT * FROM uploading WHERE user_id = :username");
+$sql = ("SELECT * FROM uploading WHERE user_id = :user_id");
 $req = $bdd->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-$req->execute(array('username' => $_SESSION['user']));
-if($req->rowCount())
-{
-    $obj->success = true;
-    $id = $req->fetchAll();
-    $obj->message = $id;
-    $_SESSION['user'] = $id;
+$req->execute(array('user_id' => $aa[0][0]));
+$obj->success = true;
+$obj->message = $aa;
+$obj->images = $req->fetchAll();
 
 
-}else{
-
-    $obj->message = "erreur test";
-
-}
 
 
 header('Cache-Control: no-cache, must-revalidate');

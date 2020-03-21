@@ -1,5 +1,5 @@
 $(document).ready(function (e) {
-      photo();
+     parcoursphoto();
     $("#form-upload").on('submit',(function(e) {
         $.ajax({
             url: "json/upload_files.php",
@@ -26,7 +26,7 @@ $(document).ready(function (e) {
                                     $('<img src="'+data.final_filename+'"/>')
                                         .css({
                                             'border': '0.5px solid black',
-                                            'width': '480px',
+                                            'width': '485px',
                                             'height': 'auto'
                                         })//,
                                     // $('<button  class="deco" />')
@@ -55,28 +55,27 @@ $(document).ready(function (e) {
     }));
 });
 
-function photo() {
+function parcoursphoto() {
     $.ajax({
-        url : "../json/photo.php",
+        url : "json/photo.php",
         method : "get"
     }).done(function (data) {
-       console.log(data.message);
         if(data.success === true) {
-            data.message.forEach(img => {
+            data.images.forEach(img => {
                 $('#centre2')
                     .append(
                         $('<img/>')
                             .attr({
-                                'src' : img + '.png',
-                                'alt' : 'image numero ' + img
+                                'src' : img['file_name'],
+                                'alt' : 'image numero ' + img['idimg']
                             })
                     )
             })
-        } else if (data.success === false) { // data.success === false
+        } else if (data.success === false) {
             $('#message').html(data.message).fadeIn().css("color","#FF0000");
         }
     }).fail(function () {
-        $('body').html('Une erreur critique est arrivée.');
+        $('body').html('Une erreur est arrivée.');
     });
 
 }
